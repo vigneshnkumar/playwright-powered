@@ -1,4 +1,4 @@
-# Selenium → Playwright Migration Story
+# Selenium → Playwright Migration 
 
 ## Executive Summary
 
