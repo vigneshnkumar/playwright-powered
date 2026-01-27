@@ -1,4 +1,36 @@
 /**
+ * DocsHomePage - Page Object Model for Playwright testing
+ * 
+ * This class represents the Playwright documentation homepage (https://playwright.dev)
+ * and provides reusable methods to interact with it.
+ * 
+ * @class DocsHomePage
+ * @example
+ * ```typescript
+ * const page = await browser.newPage();
+ * const docsPage = new DocsHomePage(page);
+ * await docsPage.goto();
+ * await docsPage.goToGetStarted();
+ * ```
+ * 
+ * KEY CONCEPTS FOR BEGINNERS:
+ * 
+ * **Page Object Model (POM)**: Instead of writing selectors in every test,
+ * we organize them in a class. This makes tests cleaner and easier to maintain.
+ * If the website changes, we only update one place.
+ * 
+ * **Role-based selectors** (getByRole): These find elements by their purpose
+ * rather than CSS selectors. For example, finding a link by its text "Get started"
+ * is more reliable than finding `<a class="nav-link-item">`.
+ * 
+ * **Auto-waiting**: Playwright automatically waits for elements to be ready
+ * before interacting. In older tools like Selenium, you had to manually wait.
+ * 
+ * @property {Page} page - The Playwright page instance
+ * @property {Locator} getStartedLink - Locator for the "Get started" navigation link
+ * @property {Locator} heading - Locator for the main page heading
+ */
+/**
  * DocsHomePage - Page Object for https://playwright.dev
  * 
  * PURPOSE:

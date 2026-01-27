@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 20
     
     # Run on latest Ubuntu (also works on windows-latest, macos-latest)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     
     steps:
     # 1. Checkout code
