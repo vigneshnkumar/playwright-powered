@@ -47,7 +47,7 @@ test.describe('Visual Regression Tests', () => {
     await loginPage.goto();
     
     // FIRST RUN:
-    // This creates: tests/visual/__screenshots__/visual-spec-ts-login-form-snapshot-chromium-win32.png
+    // This creates: tests/visual/visual.spec.ts-snapshots/login-form-snapshot-chromium-win32.png
     // Commit this file to git as the "source of truth"
     
     // SUBSEQUENT RUNS:
@@ -230,7 +230,7 @@ test.describe('Visual Regression Tests', () => {
  *    This overwrites baseline with new screenshot
  * 
  * 4. Commit new baseline:
- *    git add tests/visual/__screenshots__/
+ *    git add tests/visual/visual.spec.ts-snapshots/
  *    git commit -m "Update visual baseline for login form redesign"
  * 
  * TEAM WORKFLOW:

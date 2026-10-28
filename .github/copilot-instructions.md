@@ -12,8 +12,8 @@
 
 ## Project-specific patterns
 - Tests use the @playwright/test fixtures (e.g., `page`, `request`) and Playwright’s role-based selectors.
-- Example baseline tests are in [example.spec.ts](example.spec.ts).
-- API-auth bypass pattern is demonstrated in [tests/auth_bypass.spec.ts](tests/auth_bypass.spec.ts):
+- Example baseline tests are in [tests/ui/example.spec.ts](../tests/ui/example.spec.ts).
+- API-auth bypass pattern is demonstrated in [tests/api/auth-bypass.spec.ts](../tests/api/auth-bypass.spec.ts):
   - Obtain auth token via `request.post(...)`.
   - Assert `apiResponse.ok()` and parse JSON.
   - Inject token as a cookie via `page.context().addCookies(...)` before navigation.

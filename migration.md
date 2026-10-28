@@ -378,5 +378,5 @@ await expect(page.getByText('test')).toBeVisible();
 
 For questions about this migration, see:
 - **Code examples:** `/src/pages/` (Page Object Models)
-- **Test examples:** `/tests/pom/` (POM usage), `/tests/api/` (API auth)
+- **Test examples:** `/tests/offline/practice-login.pom.spec.ts` (POM usage), `/tests/api/` (API auth)
 - **CI config:** `/.github/workflows/playwright.yml`

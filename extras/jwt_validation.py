@@ -62,4 +62,4 @@ def test_validate_token_function():
     with pytest.raises(ValueError, match="Token has expired!"):
         validate_token(expired_token)
 
-# Run this command in terminal to test: pytest tests/jwt_validation.py
+# Run this command in terminal to test: pytest extras/jwt_validation.py

@@ -4,7 +4,7 @@ A practical demonstration of migrating from legacy Java/Selenium to modern Playw
 
 **🎯 Purpose:** Portfolio project demonstrating test automation best practices and migration expertise.
 
-**📚 Background:** See [docs/migration.md](docs/migration.md) for the full migration story, challenges, and solutions.
+**📚 Background:** See [migration.md](migration.md) for the full migration story, challenges, and solutions.
 
 ---
 
@@ -29,19 +29,20 @@ playwright-powered/
 │
 ├── tests/
 │   ├── ui/                       # UI smoke tests (public sites)
-│   │   └── homepage.spec.ts      # Playwright.dev navigation test
+│   │   ├── homepage.spec.ts      # Playwright.dev navigation test
+│   │   └── example.spec.ts       # Default Playwright starter tests
 │   ├── api/                      # API-first testing patterns
 │   │   └── auth-bypass.spec.ts   # Token injection via request fixture
-│   ├── pom/                      # Page Object Model usage examples
-│   │   └── practice-login.pom.spec.ts  # Demonstrates POM benefits
 │   ├── visual/                   # Visual regression tests
 │   │   ├── visual.spec.ts        # Screenshot comparison tests
-│   │   └── __screenshots__/      # Baseline images (committed to git)
-│   └── offline/                  # Offline-friendly tests
-│       └── practice-auth.spec.ts # Local HTML file testing
+│   │   └── visual.spec.ts-snapshots/  # Baseline images (committed to git)
+│   └── offline/                  # Offline-friendly tests (practice.html)
+│       ├── practice-auth.spec.ts       # Local HTML file testing
+│       ├── practice-login.pom.spec.ts  # Demonstrates POM benefits
+│       └── offline-auth.spec.ts        # Auth flow via POM
 │
-├── docs/
-│   └── migration.md              # Full migration story (resume talking points)
+├── extras/
+│   └── jwt_validation.py         # Standalone Python/pytest JWT example (not part of Playwright suite)
 │
 ├── .github/workflows/
 │   └── playwright.yml            # CI/CD pipeline (parallel execution)
@@ -49,6 +50,7 @@ playwright-powered/
 ├── playwright.config.ts          # Runner config (retries, tracing, parallelism)
 ├── practice.html                 # Local test fixture with data-testid attributes
 ├── package.json                  # Dependencies and npm scripts
+├── migration.md                  # Full migration story (resume talking points)
 └── README.md                     # This file
 ```
 
@@ -94,7 +96,7 @@ playwright-powered/
 
 ### Test Files
 
-**`tests/pom/practice-login.pom.spec.ts`** - POM demonstration
+**`tests/offline/practice-login.pom.spec.ts`** - POM demonstration
 - **What:** Test using `PracticeLoginPage` class
 - **Why:** Shows how POM improves readability and maintainability
 - **Pattern:** Instantiate page object → call methods → assert results
@@ -116,7 +118,7 @@ playwright-powered/
 
 ### Documentation
 
-**`docs/migration.md`** - Migration story
+**`migration.md`** - Migration story
 - **What:** Detailed narrative of Selenium → Playwright migration
 - **Why:** Resume talking points, interview preparation
 - **Sections:**
@@ -174,7 +176,7 @@ npm run test:ui
 npm run test:debug
 
 # Run specific test file
-npx playwright test tests/pom/practice-login.pom.spec.ts
+npx playwright test tests/offline/practice-login.pom.spec.ts
 
 # Run tests matching a pattern
 npx playwright test --grep "login"
@@ -310,7 +312,7 @@ await page.locator('div.container > button:nth-child(3)').click(); // Positional
 - 🚀 Enabled per-PR testing (previously impossible)
 - 📈 Faster release cycles (weekly → twice-weekly)
 
-**Full story:** [docs/migration.md](docs/migration.md)
+**Full story:** [migration.md](migration.md)
 
 ---
 
@@ -332,7 +334,7 @@ await page.locator('div.container > button:nth-child(3)').click(); // Positional
 - [Best Practices](https://playwright.dev/docs/best-practices)
 
 **This Project:**
-- [Migration Story](docs/migration.md) - Full context and lessons learned
+- [Migration Story](migration.md) - Full context and lessons learned
 - [POM Examples](src/pages/) - Annotated page object classes
 - [Test Examples](tests/) - Various test patterns
 
